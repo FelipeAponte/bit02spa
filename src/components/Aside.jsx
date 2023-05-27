@@ -1,7 +1,5 @@
-import Col from 'react-bootstrap/Col';
+import Col from "react-bootstrap/Col";
 
 export const Aside = () => {
-  return (
-    <Col>Aside</Col>
-  );
-}
+  return <Col lg='4'>Aside</Col>;
+};
