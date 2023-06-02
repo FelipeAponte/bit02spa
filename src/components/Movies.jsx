@@ -1,30 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 export const Movies = () => {
     const [movies, setMovies] = useState([]);
 
-    useEffect( () => {
-        let moviesList = [
-            {
-                id: 1,
-                title: "Highlander",
-                release_date: "1986-03-07",
-                runTime: 116,
-                mpaa_rating: "R",
-                description: "Some long description",
-            },
-            {
-                id: 2,
-                title: "Raider of the Lost Ark",
-                release_date: "1981-06-12",
-                runTime: 115,
-                mpaa_rating: "PG-13",
-                description: "Some long description",
-            },
-        ];
+    const { catalogo } = useOutletContext();
 
-        setMovies(moviesList);
+    useEffect( () => {
+        setMovies(catalogo);
     }, []);
 
     return (
@@ -35,9 +18,9 @@ export const Movies = () => {
             <table className="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>Movie</th>
-                        <th>Release Date</th>
-                        <th>Rating</th>
+                        <th>Película</th>
+                        <th>Director</th>
+                        <th>Clasificación</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,11 +28,11 @@ export const Movies = () => {
                         <tr key={m.id}>
                             <td>
                             <Link to={`/movie/${m.id}`}>
-                                {m.title}
+                                {m.nombre}
                             </Link>
                             </td>
-                            <td>{m.release_date}</td>
-                            <td>{m.mpaa_rating}</td>
+                            <td>{m.director}</td>
+                            <td>{m.clasificacion}</td>
                         </tr>
                     ))}
                 </tbody>

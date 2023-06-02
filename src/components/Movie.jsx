@@ -1,28 +1,22 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 
 export const Movie = () => {
     const [movie, setMovie] = useState({});
+    const { catalogo } = useOutletContext();
     let { id } = useParams();
 
     useEffect(() => {
-        let myMovie = {
-            id: 1,
-            title: "Highlander",
-            release_date: "1986-03-07",
-            runTime: 116,
-            mpaa_rating: "R",
-            description: "Some long description",
-        }
-        setMovie(myMovie);
+        setMovie(catalogo[id-1]);
     }, [id])
 
     return (
         <div className="text-center">
-            <h2>Película: {movie.title}</h2>
+            <h2>Película: {movie.nombre}</h2>
             <hr />
-            <p>{movie.description}</p>
-
+            <h4>Director: {movie.director}</h4>
+            <h4>Clasificación: {movie.clasificacion}</h4>
+            <img src={movie.imagen} className="img-fluid w-50" alt="movie tickets" />
         </div>
     );
 }

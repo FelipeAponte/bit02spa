@@ -2,6 +2,7 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import "./App.css";
 import { useState } from "react";
 import Alert from "./components/Alert";
+import { catalogo } from "./utils/catalogo";
 
 export function App() {
   const [jwtToken, setJwtToken] = useState("");
@@ -48,31 +49,19 @@ export function App() {
                 >
                   Películas
                 </Link>
-                <Link
-                  to="/genres"
-                  className="list-group-item list-group-item-action"
-                >
-                  Géneros
-                </Link>
                 {jwtToken !== "" && (
                   <>
                     <Link
-                      to="/admin/movie/0"
+                      to="/admin/movie/"
                       className="list-group-item list-group-item-action"
                     >
                       Agregar Película
                     </Link>
                     <Link
-                      to="/admin"
+                      to="/admin/catalogue"
                       className="list-group-item list-group-item-action"
                     >
                       Manejar Catálogo
-                    </Link>
-                    <Link
-                      to="graphql"
-                      className="list-group-item list-group-item-action"
-                    >
-                      GraphQL
                     </Link>
                   </>
                 )}
@@ -87,6 +76,7 @@ export function App() {
                 setJwtToken,
                 setAlertClassName,
                 setAlertMessage,
+                catalogo,
               }}
             />
           </div>
