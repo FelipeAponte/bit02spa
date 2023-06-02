@@ -1,51 +1,59 @@
+import pelicula1 from "./../images/sexto_sentido.jpg";
+import pelicula2 from "./../images/pulp_fiction.jpg";
+import pelicula3 from "./../images/todo_sobre_mi_madre.jpg";
+import pelicula4 from "./../images/300.jpg";
+import pelicula5 from "./../images/el_silencio_de_los_corderos.jpg";
+import pelicula6 from "./../images/forrest_gump.jpg";
+import pelicula7 from "./../images/las_hurdes.jpg";
+
 export const catalogo = [
     {
         id: 1,
         nombre: "El sexto sentido",
         director: "M. Night Shyamalan",
         clasificacion: "Drama",
-        imagen: "./../src/images/sexto_sentido.jpg"
+        imagen: pelicula1
     },
     {
         id: 2,
         nombre: "Pulp Fiction",
         director: "Tarantino",
         clasificacion: "Acción",
-        imagen: "./../src/images/pulp_fiction.jpg"
+        imagen: pelicula2
     },
     {
         id: 3,
         nombre: "Todo Sobre Mi Madre",
         director: "Almodobar",
         clasificacion: "Drama",
-        imagen: "./../src/images/todo_sobre_mi_madre.jpg"
+        imagen: pelicula3
     },
     {
         id: 4,
         nombre: "300",
         director: "Zack Snyder",
         clasificacion: "Acción",
-        imagen: "./../src/images/300.jpg"
+        imagen: pelicula4
     },
     {
         id: 5,
         nombre: "El silencio de los corderos",
         director: "Jonathan Demme",
         clasificacion: "Drama",
-        imagen: "./../src/images/el_silencio_de_los_corderos.jpg"
+        imagen: pelicula5
     },
     {
         id: 6,
         nombre: "Forrest Gump",
         director: "Robert Zemeckis",
         clasificacion: "Comedia",
-        imagen: "./../src/images/forrest_gump.jpg"
+        imagen: pelicula6
     },
     {
         id: 7,
         nombre: "Las Hurdes",
         director: "Luis Buñuel",
         clasificacion: "Documental",
-        imagen: "./../src/images/las_hurdes.jpg"
+        imagen: pelicula7
     }
 ]

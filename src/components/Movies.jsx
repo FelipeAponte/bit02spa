@@ -5,8 +5,12 @@ export const Movies = () => {
     const [movies, setMovies] = useState([]);
 
     const { catalogo } = useOutletContext();
+    const { setAlertClassName } = useOutletContext();
+    const { setAlertMessage } = useOutletContext();
 
     useEffect( () => {
+        setAlertClassName("d-none");
+        setAlertMessage("")
         setMovies(catalogo);
     }, []);
 

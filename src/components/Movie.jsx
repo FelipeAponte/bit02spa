@@ -8,7 +8,7 @@ export const Movie = () => {
 
     useEffect(() => {
         setMovie(catalogo[id-1]);
-    }, [id])
+    }, [catalogo, id])
 
     return (
         <div className="text-center">

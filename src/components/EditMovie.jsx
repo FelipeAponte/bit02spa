@@ -10,6 +10,8 @@ export const EditMovie = () => {
   const navigate = useNavigate();
   const { jwtToken } = useOutletContext();
   const { catalogo } = useOutletContext();
+  const { setAlertClassName } = useOutletContext();
+  const { setAlertMessage } = useOutletContext();
 
   useEffect(() => {
     if (jwtToken === "") {
@@ -26,10 +28,17 @@ export const EditMovie = () => {
         id: n+1,
         nombre: nombre,
         director: director,
-        clasificacion: clasificacion
+        clasificacion: clasificacion,
+        imagen: "./../src/images/pelicula_nueva.jpg"
     };
 
     catalogo.push(newMovie);
+    setNombre("");
+    setDirector("");
+    setClasificacion("");
+    setAlertClassName("alert-success");
+    setAlertMessage("Película Agregada Correctamente");
+    navigate("/movies");
   };
 
   return (
